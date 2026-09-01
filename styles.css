@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --ink: #17211c;
+  --muted: #66716a;
+  --paper: #f3f2ec;
+  --surface: #fbfaf6;
+  --line: #d7dbd1;
+  --lime: #d9f45a;
+  --orange: #ff765d;
+  --max-width: 1180px;
+  --radius: 4px;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "DM Mono", monospace;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-height: 100vh; background: var(--paper); color: var(--ink); font-family: var(--font-display); line-height: 1.6; }
+a { color: inherit; }
+.site-header { position: sticky; top: 0; z-index: 10; border-bottom: 1px solid var(--line); background: rgba(243, 242, 236, .92); backdrop-filter: blur(12px); }
+.header-inner, .page, .site-footer { max-width: var(--max-width); margin: 0 auto; }
+.header-inner { padding: 1.15rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+.brand { display: flex; align-items: center; white-space: nowrap; text-decoration: none; font-weight: 700; letter-spacing: -.04em; }
+.brand-name { white-space: nowrap; }
+.brand-mark { display: inline-grid; place-items: center; width: 2rem; height: 2rem; margin-right: .55rem; background: var(--ink); color: var(--lime); font: 500 .68rem var(--font-mono); letter-spacing: 0; }
+.site-nav { display: flex; gap: .35rem; }
+.nav-link { padding: .45rem .8rem; color: var(--muted); font: 500 .72rem var(--font-mono); text-decoration: none; text-transform: uppercase; }
+.nav-link:hover, .nav-link.active { color: var(--ink); text-decoration: none; }
+.nav-link.active { border-bottom: 2px solid var(--orange); }
+#app { min-height: calc(100vh - 145px); }
+.page { display: none; padding: 5.5rem 2rem 6rem; }
+.page.active { display: block; animation: reveal .5s ease both; }
+@keyframes reveal { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.home-intro { display: flex; justify-content: space-between; gap: 2rem; border-top: 1px solid var(--ink); padding-top: .85rem; margin-bottom: 5rem; }
+.eyebrow, .section-kicker, .sidebar-heading { margin: 0; color: var(--muted); font: 500 .68rem var(--font-mono); text-transform: uppercase; letter-spacing: .06em; }
+.intro-note { max-width: 260px; margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.45; }
+.about-section { display: grid; grid-template-columns: minmax(230px, 34%) 1fr; gap: clamp(2.5rem, 8vw, 8rem); align-items: center; }
+.headshot-placeholder { position: relative; display: grid; place-items: center; aspect-ratio: 4 / 5; max-width: 330px; border: 1px solid var(--ink); background: var(--orange); box-shadow: 12px 12px 0 var(--lime); color: var(--ink); text-align: center; }
+.placeholder-label { font: 500 1.05rem var(--font-mono); line-height: 1.25; }
+.placeholder-index { position: absolute; right: 1rem; bottom: .8rem; font: .68rem var(--font-mono); }
+.about-content { max-width: 620px; }
+.about-content h1 { margin: .7rem 0 1rem; font-size: clamp(3.8rem, 8vw, 7.5rem); line-height: .86; letter-spacing: -.09em; }
+.about-content h1 em { color: var(--orange); font-style: normal; }
+.tagline { margin: 0 0 1.4rem; font-size: 1.15rem; font-weight: 600; }
+.about-content p:not(.section-kicker):not(.tagline) { max-width: 590px; color: var(--muted); }
+.about-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+.button { display: inline-flex; gap: .8rem; align-items: center; padding: .8rem 1rem; border: 1px solid var(--ink); border-radius: var(--radius); font: 500 .72rem var(--font-mono); text-decoration: none; text-transform: uppercase; }
+.button:hover { text-decoration: none; transform: translateY(-2px); }
+.button-primary { background: var(--ink); color: var(--lime); }
+.button-secondary { background: transparent; }
+.portfolio-layout { display: grid; grid-template-columns: 220px 1fr; gap: clamp(2rem, 7vw, 7rem); align-items: start; }
+.portfolio-sidebar { position: sticky; top: 94px; }
+.sidebar-heading { padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
+.category-list { display: flex; flex-direction: column; gap: .2rem; list-style: none; margin: 1rem 0 0; padding: 0; }
+.category-button { width: 100%; padding: .7rem .8rem; border: 0; border-left: 2px solid transparent; background: transparent; color: var(--muted); cursor: pointer; font: 500 .82rem var(--font-mono); text-align: left; }
+.category-button:hover, .category-button.active { border-left-color: var(--orange); background: var(--surface); color: var(--ink); }
+.portfolio-content h1 { margin: 0; font-size: clamp(2.6rem, 5vw, 5rem); line-height: .95; letter-spacing: -.07em; }
+.category-description { max-width: 440px; margin: 1.25rem 0 3rem; color: var(--muted); }
+.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+.project-card { border: 1px solid var(--line); background: var(--surface); }
+.project-card-media { position: relative; display: flex; align-items: center; justify-content: center; height: 170px; background: var(--lime); color: var(--ink); font: .67rem var(--font-mono); text-transform: uppercase; }
+.project-card:nth-child(2n) .project-card-media { background: var(--orange); }
+.card-arrow { position: absolute; top: .8rem; right: .8rem; font-size: 1.1rem; }
+.project-card-body { padding: 1rem; }
+.project-card-body h3 { margin: 0 0 .3rem; font-size: 1rem; }
+.project-card-body p { margin: 0; color: var(--muted); font-size: .85rem; }
+.site-footer { padding: 1.5rem 2rem; border-top: 1px solid var(--line); color: var(--muted); font: .65rem var(--font-mono); text-transform: uppercase; }
+@media (max-width: 720px) {
+  .header-inner, .page { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .brand { font-size: .92rem; }
+  .brand-mark { width: 1.8rem; height: 1.8rem; margin-right: .4rem; }
+  .page { padding-top: 3.5rem; }
+  .home-intro { margin-bottom: 3.5rem; }
+  .intro-note { display: none; }
+  .about-section, .portfolio-layout { grid-template-columns: 1fr; }
+  .about-section { gap: 3.5rem; }
+  .headshot-placeholder { width: min(72vw, 280px); }
+  .about-content h1 { font-size: clamp(3.6rem, 18vw, 6rem); }
+  .portfolio-sidebar { position: static; }
+  .category-list { flex-direction: row; flex-wrap: wrap; }
+  .category-button { width: auto; }
+}
