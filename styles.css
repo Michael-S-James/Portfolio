@@ -36,9 +36,7 @@ a { color: inherit; }
 .eyebrow, .section-kicker, .sidebar-heading { margin: 0; color: var(--muted); font: 500 .68rem var(--font-mono); text-transform: uppercase; letter-spacing: .06em; }
 .intro-note { max-width: 260px; margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.45; }
 .about-section { display: grid; grid-template-columns: minmax(230px, 34%) 1fr; gap: clamp(2.5rem, 8vw, 8rem); align-items: center; }
-.headshot-placeholder { position: relative; display: grid; place-items: center; aspect-ratio: 4 / 5; max-width: 330px; border: 1px solid var(--ink); background: var(--orange); box-shadow: 12px 12px 0 var(--lime); color: var(--ink); text-align: center; }
-.placeholder-label { font: 500 1.05rem var(--font-mono); line-height: 1.25; }
-.placeholder-index { position: absolute; right: 1rem; bottom: .8rem; font: .68rem var(--font-mono); }
+.headshot-photo { display: block; width: 100%; max-width: 330px; height: auto; border: 1px solid var(--ink); box-shadow: 12px 12px 0 var(--lime); }
 .about-content { max-width: 620px; }
 .about-content h1 { margin: .7rem 0 1rem; font-size: clamp(3.8rem, 8vw, 7.5rem); line-height: .86; letter-spacing: -.09em; }
 .about-content h1 em { color: var(--orange); font-style: normal; }
@@ -111,7 +109,7 @@ a { color: inherit; }
   .intro-note { display: none; }
   .about-section, .portfolio-layout { grid-template-columns: 1fr; }
   .about-section { gap: 3.5rem; }
-  .headshot-placeholder { width: min(72vw, 280px); }
+  .headshot-photo { width: min(72vw, 280px); }
   .about-content h1 { font-size: clamp(3.6rem, 18vw, 6rem); }
   .portfolio-sidebar { position: static; }
   .category-list { flex-direction: row; flex-wrap: wrap; }
