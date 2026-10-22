@@ -3,6 +3,7 @@
 const pages = [
   { id: "home", label: "About" },
   { id: "portfolio", label: "Portfolio" },
+  { id: "resume", label: "Resume" },
 ];
 
 // Adding a new portfolio category: add an entry here (with placeholder items) and
